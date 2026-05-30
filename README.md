@@ -1,8 +1,8 @@
 # 5G NetOps LLM Copilot Red Team Engagement
 
 **Tools:** Python · FastAPI · ChromaDB · Ollama (Llama 3.2) · Sentence Transformers · Kali Linux · Splunk · Sigma
-
-![Dependencies Installed](img/01-dependencies-installed.png)
+## Architecture
+![Dependencies Installed](img/5GLLMCopilotRedTeamArchitecture.gif)
 
 ## The Problem
 
@@ -69,16 +69,6 @@ I configured a Splunk alert to fire in real time whenever the poisoned document 
 The most important finding was not about the attacks themselves. It was that the model retrieved the poisoned document on a completely benign query. This means detection cannot rely on spotting suspicious questions. It has to monitor what the model reads, not just what the user asks.
 
 A second finding worth noting: the model cannot assign trust levels to documents. Both the legitimate AMF guide and the poisoned Nokia advisory carried equal weight in retrieval. The vector database has no concept of document provenance or authority. Any document in the knowledge base is treated as equally credible.
-
-## Architecture
-
-The project runs across three VMs on an isolated lab network:
-
-| VM | Role | What it runs |
-|---|---|---|
-| free5GC | Target | Ollama · ChromaDB · FastAPI copilot · copilot.log |
-| Kali Linux | Attacker | attack.py red team suite |
-| Ubuntu | Defender | Splunk SIEM · detection alerts |
 
 ## Repository Structure
 
