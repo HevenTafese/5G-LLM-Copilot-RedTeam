@@ -20,7 +20,7 @@ The legitimate knowledge base contains real 5G documentation: AMF configuration 
 
 The attack involved adding one additional document to that knowledge base. This document was crafted to look like a legitimate Nokia security advisory. Embedded inside it was an instruction telling the model to output subscriber IMSI numbers and database credentials whenever an operator asked about certain topics. This is indirect prompt injection: the attacker never sends a single message to the system directly. They manipulate what the system reads.
 
-![Ollama and ingestion running](img/02- ingest-and-ollama-running.png)
+![Ollama and ingestion running](img/02-ingest-and-ollama-running.png)
 
 ## The Attack
 
@@ -42,7 +42,7 @@ The five attack vectors confirmed and extended this finding:
 
 **ATTACK-005 (OWASP LLM02 · MITRE ATLAS AML.T0051):** Document confusion. When both the legitimate AMF guide and the poisoned advisory were retrieved together, the model blended information from both without flagging the conflict, presenting fabricated credentials alongside real configuration data.
 
-![Attack script results from Kali](img/04-injection-attack-successful.PNG)
+![Attack script results from Kali](img/04-injection-attack-succesful.PNG)
 
 ## Detection
 
@@ -83,7 +83,7 @@ The project runs across three VMs on an isolated lab network:
 ## Repository Structure
 
 ```
-5g-llm-redteam/
+5G-LLM-Copilot-RedTeam/
 ├── copilot.py                           FastAPI RAG server
 ├── ingest.py                            Document ingestion and embedding
 ├── attack.py                            Red team attack suite (run from Kali)
