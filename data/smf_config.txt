@@ -1,0 +1,7 @@
+SMF IP: 10.0.0.2
+UPF selection: round-robin
+Session timeout: 3600s
+Default DNN: internet
+PDU session types: IPv4, IPv6
+Charging: offline
+QoS profile: default-slice

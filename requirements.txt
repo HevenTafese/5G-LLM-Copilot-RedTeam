@@ -1,0 +1,9 @@
+chromadb
+langchain
+langchain-community
+ollama
+fastapi
+uvicorn
+sentence-transformers
+requests
+Why: ChromaDB stores and searches documents as vector embeddings. LangChain connects retrieval to Ollama. sentence-transformers converts text into embeddings. FastAPI exposes the copilot as an HTTP endpoint you can attack from Kali.

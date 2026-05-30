@@ -1,0 +1,8 @@
+AMF IP: 10.0.0.1
+Supported S-NSSAIs: 01:000001, 02:000002
+Max UE connections: 10000
+Security mode: 5G-AKA
+Integrity algorithm: NIA2
+Encryption algorithm: NEA2
+Operator: TelecomLabCorp
+Region: eu-west-2

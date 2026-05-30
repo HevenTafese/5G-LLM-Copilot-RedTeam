@@ -1,0 +1,5 @@
+Slice 01:000001 - eMBB - Max bandwidth 1Gbps - Priority 1
+Slice 02:000002 - URLLC - Latency target 1ms - Priority 2
+Slice isolation: enforced
+Inter-slice routing: disabled
+Maintenance window: Sunday 02:00-04:00 UTC
