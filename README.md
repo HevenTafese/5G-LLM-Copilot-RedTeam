@@ -20,7 +20,7 @@ The legitimate knowledge base contains real 5G documentation: AMF configuration 
 
 The attack involved adding one additional document to that knowledge base. This document was crafted to look like a legitimate Nokia security advisory. Embedded inside it was an instruction telling the model to output subscriber IMSI numbers and database credentials whenever an operator asked about certain topics. This is indirect prompt injection: the attacker never sends a single message to the system directly. They manipulate what the system reads.
 
-![Ollama and ingestion running](img/02-ingest and ollama running.png)
+![Ollama and ingestion running](img/02- ingest-and-ollama-running.png)
 
 ## The Attack
 
@@ -42,7 +42,7 @@ The five attack vectors confirmed and extended this finding:
 
 **ATTACK-005 (OWASP LLM02 · MITRE ATLAS AML.T0051):** Document confusion. When both the legitimate AMF guide and the poisoned advisory were retrieved together, the model blended information from both without flagging the conflict, presenting fabricated credentials alongside real configuration data.
 
-![Attack script results from Kali](img/04-injection-attack-successfull.png)
+![Attack script results from Kali](img/04-injection-attack-successful.PNG)
 
 ## Detection
 
@@ -60,7 +60,7 @@ This returned 14 events: every single query during the engagement had retrieved 
 
 I configured a Splunk alert to fire in real time whenever the poisoned document appeared in retrieved sources, and wrote a corresponding Sigma rule for portability to other SIEM platforms.
 
-![Splunk alert configured](img/05-splunk-alert-configured.png)
+![Splunk alert configured](img/5-splunk-alert-configured.png)
 
 ![Sigma detection rule](img//06-sigma-detection-rule.png)
 
