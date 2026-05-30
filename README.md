@@ -20,7 +20,7 @@ The legitimate knowledge base contains real 5G documentation: AMF configuration 
 
 The attack involved adding one additional document to that knowledge base. This document was crafted to look like a legitimate Nokia security advisory. Embedded inside it was an instruction telling the model to output subscriber IMSI numbers and database credentials whenever an operator asked about certain topics. This is indirect prompt injection: the attacker never sends a single message to the system directly. They manipulate what the system reads.
 
-![Ollama and ingestion running](img/02-ingest_and_ollama_running.png)
+![Ollama and ingestion running](img/02-ingest and ollama running.png)
 
 ## The Attack
 
@@ -28,7 +28,7 @@ The copilot was exposed as an HTTP endpoint on port 8000. From a Kali Linux VM o
 
 The most revealing moment came before the attack script even ran. A completely normal operator query, asking about current AMF configuration settings, returned IMSI numbers and configuration credentials because the poisoned document was semantically close enough to the query for ChromaDB to retrieve it automatically. The model had no way to distinguish it from legitimate documentation.
 
-![First legitimate query returning poisoned response](img/03-legitimate-query-poisoned-response.png)
+![First legitimate query returning poisoned response](img/03-legitimate-query-poisoned-response.PNG)
 
 The five attack vectors confirmed and extended this finding:
 
@@ -42,7 +42,7 @@ The five attack vectors confirmed and extended this finding:
 
 **ATTACK-005 (OWASP LLM02 · MITRE ATLAS AML.T0051):** Document confusion. When both the legitimate AMF guide and the poisoned advisory were retrieved together, the model blended information from both without flagging the conflict, presenting fabricated credentials alongside real configuration data.
 
-![Attack script results from Kali](img/04-injection-attack-successful.png)
+![Attack script results from Kali](img/04-injection-attack-successfull.png)
 
 ## Detection
 
